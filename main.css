@@ -1,0 +1,185 @@
+:root {
+    /* 62.5% of 16px default = 10px */
+    --base-font-size: 62.5%;
+    --font-family: Helvetica, Arial, sans-serif;
+    --line-height: 1.6;
+    --base-hue: 0;
+    --accent-hue: 240;
+    --color-primary: hsl(var(--base-hue), 0%, 0%);
+    --color-primary-softer: hsl(var(--base-hue), 0%, 30%);
+    --color-secondary: hsl(var(--base-hue), 0%, 100%);
+    --color-active: hsl(var(--accent-hue), 100%, 50%);
+    --color-active-softer: hsl(var(--accent-hue), 100%, 65%);
+    --border-color: hsl(var(--base-hue), 0%, 75%);
+    --border-color-softer: hsl(var(--base-hue), 0%, 35%);
+}
+
+html {
+    font-size: var(--base-font-size);
+    overflow-y: scroll;
+    direction: ltr;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: var(--line-height);
+    font-family: var(--font-family);
+    color: var(--color-primary);
+    font-weight: 400;
+    background-color: var(--color-secondary);
+}
+
+.container {
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+@media (min-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: 6fr 4fr;
+    }
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 3.0rem;
+    line-height: 1.2;
+    letter-spacing: -.1rem;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+.bg-image {
+    background-color: var(--color-active-softer);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width: 600px) {
+    .bg-image {
+        background-image: url("https://picsum.photos/800");
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+}
+
+label>.label-body {
+    display: inline-block;
+    margin-left: .5rem;
+    font-weight: normal;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    display: inline;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    height: 3.8rem;
+    padding: 0 3.0rem;
+    color: var(--color-primary-softer);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 3.8rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: .4rem;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+input[type="submit"]:hover {
+    color: var(--color-secondary);
+    border-color: var(--color-active);
+    background-color: var(--color-active);
+    outline: 0;
+}
+
+input[type="email"], input[type="password"] {
+    height: 38px;
+    padding: 6px 10px;
+    /* The 6px vertically centers text on FF, ignored by Webkit */
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color-softer);
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    border: 1px solid var(--color-active);
+    outline: 0;
+}
+
+input {
+    margin-bottom: 1.5rem;
+    transition: all .3s ease-in-out;
+}
+
+form {
+    margin-bottom: 2.5rem;
+}
+
+a {
+    color: var(--color-active);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-active-softer);
+}
+
+.full-width {
+    width: 100%;
+}
+
+p {
+    margin-top: 0;
+}
+
+.form-wrap {
+    padding: 50px 20px;
+}
+
+@media (min-width: 600px) {
+    .form-wrap {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+}
+
+.form-wrap>form {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 480px;
+}
+
+@media (min-width: 600px) {
+    .form-wrap>form {
+        width: 65%;
+    }
+}
